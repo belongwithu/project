@@ -356,7 +356,6 @@
 
   initEnvironment = function() {
     document.getElementById("button-vote-positive").click();
-    Playback.streamDisabled = true;
     return document.getElementById("button-sound").click();
   };
 
