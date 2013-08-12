@@ -761,13 +761,11 @@
     };
 
     roomHelpCommand.prototype.functionality = function() {
-      var msg1;
-      msg1 = "Welcome to Sabai_Sataichillchill.  ";
-	  msg += "How to play :: http://youtu.be/fhpvrMcyYLk";
-      API.sendChat(msg1);
-      return setTimeout((function() {
-        return API.sendChat(msg2);
-      }), 750);
+      var msg;
+      msg = "Welcome to Sabai_Sataichillchill. ";
+      msg += "How to play :: http://youtu.be/fhpvrMcyYLk ";
+
+      return API.sendChat(msg);
     };
 
     return roomHelpCommand;
