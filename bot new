@@ -761,7 +761,7 @@
     };
 
     roomHelpCommand.prototype.functionality = function() {
-      var msg1, msg2;
+      var msg1;
       msg1 = "Welcome to Sabai_Sataichillchill.  ";
 	  msg += "How to play :: http://youtu.be/fhpvrMcyYLk";
       API.sendChat(msg1);
