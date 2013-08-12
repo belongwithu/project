@@ -212,7 +212,6 @@
   data = new settings();
 
   User = (function() {
-
     User.prototype.afkWarningCount = 0;
 
     User.prototype.lastWarning = null;
@@ -224,27 +223,16 @@
     function User(user) {
       this.user = user;
       this.updateVote = __bind(this.updateVote, this);
-
       this.inRoom = __bind(this.inRoom, this);
-
       this.notDj = __bind(this.notDj, this);
-
       this.warn = __bind(this.warn, this);
-
       this.getIsDj = __bind(this.getIsDj, this);
-
       this.getWarningCount = __bind(this.getWarningCount, this);
-
       this.getUser = __bind(this.getUser, this);
-
       this.getLastWarning = __bind(this.getLastWarning, this);
-
       this.getLastActivity = __bind(this.getLastActivity, this);
-
       this.updateActivity = __bind(this.updateActivity, this);
-
       this.init = __bind(this.init, this);
-
       this.init();
     }
 
@@ -315,7 +303,6 @@
   })();
 
   RoomHelper = (function() {
-
     function RoomHelper() {}
 
     RoomHelper.prototype.lookupUser = function(username) {
@@ -383,9 +370,7 @@
   };
 
   afkCheck = function() {
-    var DJs, id, lastActivity, lastWarned, now, oneMinute, secsLastActive, timeSinceLastActivity, timeSinceLastWarning, 
-
-twoMinutes, user, warnMsg, _ref, _results;
+    var DJs, id, lastActivity, lastWarned, now, oneMinute, secsLastActive, timeSinceLastActivity, timeSinceLastWarning, twoMinutes, user, warnMsg, _ref, _results;
     _ref = data.users;
     _results = [];
     for (id in _ref) {
@@ -398,9 +383,7 @@ twoMinutes, user, warnMsg, _ref, _results;
           secsLastActive = timeSinceLastActivity / 1;
           if (user.getWarningCount() === 0) {
             user.warn();
-            _results.push(API.sendChat("@" + user.getUser().username + ", I haven't seen you chat or vote in at least 12 
-
-minutes. Are you AFK?  If you don't show activity in 2 minutes I will remove you."));
+            _results.push(API.sendChat("@" + user.getUser().username + ", I haven't seen you chat or vote in at least 12 minutes. Are you AFK?  If you don't show activity in 2 minutes I will remove you."));
           } else if (user.getWarningCount() === 1) {
             lastWarned = user.getLastWarning();
             timeSinceLastWarning = now.getTime() - lastWarned.getTime();
@@ -408,9 +391,7 @@ minutes. Are you AFK?  If you don't show activity in 2 minutes I will remove you
             if (timeSinceLastWarning > twoMinutes) {
               user.warn();
               warnMsg = "@" + user.getUser().username;
-              warnMsg += ", I haven't seen you chat or vote in at least 14 minutes now.  This is your second and FINAL warning.  
-
-If you do not chat or vote in the next minute I will remove you.";
+              warnMsg += ", I haven't seen you chat or vote in at least 14 minutes now.  This is your second and FINAL warning.  If you do not chat or vote in the next minute I will remove you.";
               _results.push(API.sendChat(warnMsg));
               } else {
               _results.push(void 0);
@@ -494,7 +475,6 @@ If you do not chat or vote in the next minute I will remove you.";
   };
 
   Command = (function() {
-
     function Command(msgData) {
       this.msgData = msgData;
       this.init();
@@ -618,9 +598,7 @@ If you do not chat or vote in the next minute I will remove you.";
           API.sendChat("/em doesn't see '" + msg.substr(8) + "' in room and eats cookie himself");
           return false;
         } else {
-          return API.sendChat("@" + user.username + ", @" + this.msgData.from + " เปิดเพลงเพราะแบบนี้มีขนมให้กิน อ่ะนี่ [  " + this.getCookie() + " 
-
-] กินให้อร่อยนะ :D");
+          return API.sendChat("@" + user.username + ", @" + this.msgData.from + " เปิดเพลงเพราะแบบนี้มีขนมให้กิน อ่ะนี่ [  " + this.getCookie() + " ] กินให้อร่อยนะ :D");
         }
       }
     };
@@ -674,29 +652,15 @@ If you do not chat or vote in the next minute I will remove you.";
       } else {
         selections['artist'] = chooseRandom(arts);
       }
-      msg = "Everyone's heard that " + selections['artist'] + " track! Get new music from http://youtube.com/" + selections
-
-['channels'][0] + " http://youtube.com/" + selections['channels'][1] + " or http://youtube.com/" + selections['channels'][2];
+      msg = "Everyone's heard that " + selections['artist'] + " track! Get new music from http://youtube.com/" + selections['channels'][0] + " http://youtube.com/" + selections['channels'][1] + " or http://youtube.com/" + selections['channels'][2];
       return API.sendChat(msg);
     };
 
-    newSongsCommand.prototype.memberChannels = ["JitterStep", "MistaDubstep", "DubStationPromotions", "UndergroundDubstep", 
+    newSongsCommand.prototype.memberChannels = ["JitterStep", "MistaDubstep", "DubStationPromotions", "UndergroundDubstep", "JesusDied4Dubstep", "DarkstepWarrior", "BombshockDubstep", "Sharestep"];
 
-"JesusDied4Dubstep", "DarkstepWarrior", "BombshockDubstep", "Sharestep"];
+    newSongsCommand.prototype.channels = ["BassRape", "Mudstep", "WobbleCraftDubz", "MonstercatMedia", "UKFdubstep", "DropThatBassline", "Dubstep", "VitalDubstep", "AirwaveDubstepTV", "EpicNetworkMusic", "NoOffenseDubstep", "InspectorDubplate", "ReptileDubstep", "MrMoMDubstep", "FrixionNetwork", "IcyDubstep", "DubstepWeed", "VhileMusic", "LessThan3Dubstep", "PleaseMindTheDUBstep", "ClownDubstep", "TheULTRADUBSTEP", "DuBM0nkeyz", "DubNationUK", "TehDubstepChannel", "BassDropMedia", "USdubstep", "UNITEDubstep"];
 
-    newSongsCommand.prototype.channels = ["BassRape", "Mudstep", "WobbleCraftDubz", "MonstercatMedia", "UKFdubstep", 
-
-"DropThatBassline", "Dubstep", "VitalDubstep", "AirwaveDubstepTV", "EpicNetworkMusic", "NoOffenseDubstep", "InspectorDubplate", 
-
-"ReptileDubstep", "MrMoMDubstep", "FrixionNetwork", "IcyDubstep", "DubstepWeed", "VhileMusic", "LessThan3Dubstep", 
-
-"PleaseMindTheDUBstep", "ClownDubstep", "TheULTRADUBSTEP", "DuBM0nkeyz", "DubNationUK", "TehDubstepChannel", "BassDropMedia", 
-
-"USdubstep", "UNITEDubstep"];
-
-    newSongsCommand.prototype.artists = ["Skrillex", "Doctor P", "Excision", "Flux Pavilion", "Knife Party", "Krewella", 
-
-"Rusko", "Bassnectar", "Nero", "Deadmau5", "Borgore", "Zomboy"];
+    newSongsCommand.prototype.artists = ["Skrillex", "Doctor P", "Excision", "Flux Pavilion", "Knife Party", "Krewella", "Rusko", "Bassnectar", "Nero", "Deadmau5", "Borgore", "Zomboy"];
 
     return newSongsCommand;
 
@@ -718,11 +682,7 @@ If you do not chat or vote in the next minute I will remove you.";
 
     whyWootCommand.prototype.functionality = function() {
       var msg, nameIndex;
-      msg = "We dislike AFK djs. We calculate your AFK status by checking the last time you			Woot'd or spoke. 
-
-If you don't woot, I'll automagically remove you. Use our AutoWoot			script to avoid being removed: 
-
-http://bit.ly/McZdWw";
+      msg = "We dislike AFK djs. We calculate your AFK status by checking the last time you			Woot'd or spoke. If you don't woot, I'll automagically remove you. Use our AutoWoot			script to avoid being removed: http://bit.ly/McZdWw";
       if ((nameIndex = this.msgData.message.indexOf('@')) !== -1) {
         return API.sendChat(this.msgData.message.substr(nameIndex) + ', ' + msg);
       } else {
@@ -878,9 +838,7 @@ http://bit.ly/McZdWw";
 
     badQualityCommand.prototype.functionality = function() {
       var msg;
-      msg = "Flagged for bad sound quality. Where do you get your music? The garbage can? Don't play this low quality tune 
-
-again!";
+      msg = "Flagged for bad sound quality. Where do you get your music? The garbage can? Don't play this low quality tune again!";
       return API.sendChat(msg);
     };
 
@@ -1026,9 +984,7 @@ again!";
       t = data.totalVotingData;
       t['songs'] = data.songCount;
       launch = 'Initiated ' + month + '/' + day + ' ' + hour + ':' + min + ' ' + meridian + '. ';
-      totals = '' + t.songs + ' songs have been played, accumulating ' + t.woots + ' woots, ' + t.mehs + ' mehs, and ' + 
-
-t.curates + ' queues.';
+      totals = '' + t.songs + ' songs have been played, accumulating ' + t.woots + ' woots, ' + t.mehs + ' mehs, and ' + t.curates + ' queues.';
       msg = launch + totals;
       return API.sendChat(msg);
     };
@@ -1348,9 +1304,7 @@ t.curates + ' queues.';
     };
 
     overplayedCommand.prototype.functionality = function() {
-      return API.sendChat("View the list of songs we consider overplayed and suggest additions at 
-
-http://den.johnback.us/overplayed_tracks");
+      return API.sendChat("View the list of songs we consider overplayed and suggest additions at http://den.johnback.us/overplayed_tracks");
     };
 
     return overplayedCommand;
@@ -1373,9 +1327,7 @@ http://den.johnback.us/overplayed_tracks");
 
     uservoiceCommand.prototype.functionality = function() {
       var msg;
-      msg = 'Have an idea for the room, our bot, or an event?  Awesome! Submit it to our uservoice and we\'ll get started on it: 
-
-http://is.gd/IzP4bA';
+      msg = 'Have an idea for the room, our bot, or an event?  Awesome! Submit it to our uservoice and we\'ll get started on it: http://is.gd/IzP4bA';
       msg += ' (please don\'t ask for mod)';
       return API.sendChat(msg);
     };
@@ -1495,9 +1447,7 @@ http://is.gd/IzP4bA';
     };
 
     disconnectLookupCommand.prototype.functionality = function() {
-      var cmd, dcHour, dcLookupId, dcMeridian, dcMins, dcSongsAgo, dcTimeStr, dcUser, disconnectInstances, givenName, id, 
-
-recentDisconnect, resp, u, _i, _len, _ref, _ref1;
+      var cmd, dcHour, dcLookupId, dcMeridian, dcMins, dcSongsAgo, dcTimeStr, dcUser, disconnectInstances, givenName, id, recentDisconnect, resp, u, _i, _len, _ref, _ref1;
       cmd = this.msgData.message;
       if (cmd.length > 11) {
         givenName = cmd.slice(11);
@@ -1636,9 +1586,7 @@ recentDisconnect, resp, u, _i, _len, _ref, _ref1;
         averageRatio += ratio;
       }
       averageRatio = averageRatio / roomRatios.length;
-      msg = "Accounting for " + roomRatios.length.toString() + " user ratios, the average room ratio is " + 
-
-averageRatio.toFixed(2).toString() + ".";
+      msg = "Accounting for " + roomRatios.length.toString() + " user ratios, the average room ratio is " + averageRatio.toFixed(2).toString() + ".";
       return API.sendChat(msg);
     };
 
@@ -1646,15 +1594,7 @@ averageRatio.toFixed(2).toString() + ".";
 
   })(Command);
 
-  cmds = [cookieCommand, newSongsCommand, whyWootCommand, themeCommand, rulesCommand, roomHelpCommand, sourceCommand, 
-
-wootCommand, badQualityCommand, downloadCommand, afksCommand, allAfksCommand, statusCommand, unhookCommand, dieCommand, 
-
-reloadCommand, lockCommand, unlockCommand, swapCommand, popCommand, pushCommand, overplayedCommand, uservoiceCommand, 
-
-whyMehCommand, skipCommand, commandsCommand, resetAfkCommand, forceSkipCommand, disconnectLookupCommand, voteRatioCommand, 
-
-avgVoteRatioCommand];
+  cmds = [cookieCommand, newSongsCommand, whyWootCommand, themeCommand, rulesCommand, roomHelpCommand, sourceCommand, wootCommand, badQualityCommand, downloadCommand, afksCommand, allAfksCommand, statusCommand, unhookCommand, dieCommand, reloadCommand, lockCommand, unlockCommand, swapCommand, popCommand, pushCommand, overplayedCommand, uservoiceCommand, whyMehCommand, skipCommand, commandsCommand, resetAfkCommand, forceSkipCommand, disconnectLookupCommand, voteRatioCommand, avgVoteRatioCommand];
 
   chatCommandDispatcher = function(chat) {
     var c, cmd, _i, _len, _results;
@@ -1694,9 +1634,7 @@ avgVoteRatioCommand];
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + 
-
-data.currentwoots + ", Mehs: " + data.currentmehs + ", Loves: " + data.currentcurates + ".");
+      API.sendChat("/em: Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Loves: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
@@ -1759,15 +1697,9 @@ data.currentwoots + ", Mehs: " + data.currentmehs + ", Loves: " + data.currentcu
   beggar = function(chat) {
     var msg, r, responses;
     msg = chat.message.toLowerCase();
-    responses = ["Good idea @{beggar}!  Don't earn your fans or anything thats so yesterday", "Guys @{beggar} asked us to fan 
-
-him!  Lets all totally do it! ?_?", "srsly @{beggar}? ?_?", "@{beggar}.  Earning his fans the good old fashioned way.  Hard work 
-
-and elbow grease.  A true american."];
+    responses = ["Good idea @{beggar}!  Don't earn your fans or anything thats so yesterday", "Guys @{beggar} asked us to fan him!  Lets all totally do it! ?_?", "srsly @{beggar}? ?_?", "@{beggar}.  Earning his fans the good old fashioned way.  Hard work and elbow grease.  A true american."];
     r = Math.floor(Math.random() * responses.length);
-    if (msg.indexOf('fan me') !== -1 || msg.indexOf('fan for fan') !== -1 || msg.indexOf('fan pls') !== -1 || msg.indexOf
-
-('fan4fan') !== -1 || msg.indexOf('add me to fan') !== -1) {
+    if (msg.indexOf('fan me') !== -1 || msg.indexOf('fan for fan') !== -1 || msg.indexOf('fan pls') !== -1 || msg.indexOf('fan4fan') !== -1 || msg.indexOf('add me to fan') !== -1) {
       return API.sendChat(responses[r].replace("{beggar}", chat.from));
     }
   };
