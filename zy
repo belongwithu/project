@@ -379,6 +379,7 @@
     document.getElementById("button-sound").click();
     Playback.streamDisabled = true;
     return Playback.stop();
+  };
 
   initialize = function() {
     pupOnline();
