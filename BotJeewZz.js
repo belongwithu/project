@@ -65,7 +65,7 @@
       {
         interval: 15,
         offset: 0,
-        msg: "I'm a bot!"
+    //    msg: "I'm a bot!"
       }
     ];
 
@@ -341,7 +341,7 @@
   })();
 
   pupOnline = function() {
-    return API.sendChat("Bot Online!");
+ //   return API.sendChat("Bot Online!");
   };
 
   populateUserData = function() {
