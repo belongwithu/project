@@ -1637,7 +1637,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: เพลงที่เพิ่งจบไป  " + data.currentsong.title + data.currentsong.author + " >> Woots: " + currentwoots + " คน , Mehs: " + currentmehs + " คน , Keeps: " + currentcurates + " คนค่ะ :clap: ");
+      API.sendChat("/em: เพลงที่เพิ่งจบไป  " + data.currentsong.title + data.currentsong.author + " >> Woots: " + data.currentwoots + " คน , Mehs: " + data.currentmehs + " คน , Keeps: " + data.currentcurates + " คนค่ะ :clap: ");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
