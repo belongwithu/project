@@ -1141,15 +1141,15 @@
         userRemove = r.lookupUser(users[0]);
         userAdd = r.lookupUser(users[1]);
         if (userRemove === false || userAdd === false) {
-          API.sendChat('Error parsing one or both names');
+       //   API.sendChat('Error parsing one or both names');
           return false;
         } else {
           return data.lockBooth(function() {
             API.moderateRemoveDJ(userRemove.id);
-            API.sendChat("Removing " + userRemove.username + "...");
+        //    API.sendChat("Removing " + userRemove.username + "...");
             return setTimeout(function() {
               API.moderateAddDJ(userAdd.id);
-              API.sendChat("Adding " + userAdd.username + "...");
+        //      API.sendChat("Adding " + userAdd.username + "...");
               return setTimeout(function() {
                 return data.unlockBooth();
               }, 1500);
@@ -1157,7 +1157,7 @@
           });
         }
       } else {
-        return API.sendChat("Command didn't parse into two seperate usernames");
+  //      return API.sendChat("Command didn't parse into two seperate usernames");
       }
     };
 
