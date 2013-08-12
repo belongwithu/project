@@ -1126,7 +1126,7 @@
     }
 
     swapCommand.prototype.init = function() {
-      this.command = '!swap';
+      this.command = '/swap';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'mod';
     };
