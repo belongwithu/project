@@ -59,13 +59,13 @@
 
     settings.prototype.pupScriptUrl = '';
 
-    settings.prototype.afkTime = 999 * 100 * 12 * 4 * 7 * 24 * 60 * 60 * 1000;
+    settings.prototype.afkTime =  999 * 100 * 12 * 4 * 7 * 24 * 60 * 60 * 1000;
 
     settings.prototype.songIntervalMessages = [
       {
         interval: 15,
         offset: 0,
-  //      msg: "I'm a bot!"
+        msg: "I'm a bot!"
       }
     ];
 
@@ -341,7 +341,7 @@
   })();
 
   pupOnline = function() {
-//    return API.sendChat("Bot Online!");
+    return API.sendChat("Bot Online!");
   };
 
   populateUserData = function() {
@@ -356,9 +356,7 @@
 
   initEnvironment = function() {
     document.getElementById("button-vote-positive").click();
-    document.getElementById("button-sound").click();
-    # Playback.streamDisabled = true;
-    # return Playback.stop();
+    return document.getElementById("button-sound").click();
   };
 
   initialize = function() {
@@ -684,7 +682,7 @@
 
     whyWootCommand.prototype.functionality = function() {
       var msg, nameIndex;
-      msg = "We dislike AFK djs. We calculate your AFK status by checking the last time you      Woot'd or spoke. If you don't woot, I'll automagically remove you. Use our AutoWoot			script to avoid being removed: http://bit.ly/McZdWw";
+      msg = "We dislike AFK djs. We calculate your AFK status by checking the last time you    	Woot'd or spoke. If you don't woot, I'll automagically remove you. Use our AutoWoot			script to avoid being removed: http://bit.ly/McZdWw";
       if ((nameIndex = this.msgData.message.indexOf('@')) !== -1) {
         return API.sendChat(this.msgData.message.substr(nameIndex) + ', ' + msg);
       } else {
@@ -707,7 +705,7 @@
     themeCommand.prototype.init = function() {
       this.command = '!theme';
       this.parseType = 'startsWith';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'featured';
     };
 
     themeCommand.prototype.functionality = function() {
@@ -732,13 +730,13 @@
     rulesCommand.prototype.init = function() {
       this.command = '!rules';
       this.parseType = 'startsWith';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'featured';
     };
 
     rulesCommand.prototype.functionality = function() {
       var msg;
       msg = "1) Play good sound quality music. ";
-	  msg += "2) Don't play dubstep , electro , metal rock or porn. ";
+      msg += "2) Don't play dubstep , electro , metal rock or porn. ";
       msg += "3) Don't replay a song on the room history. 4) Max song limit 7 minutes. ";
       msg += "5) 8 mehs we will skip 6) Don't rude. ";
       return API.sendChat(msg);
@@ -759,7 +757,7 @@
     roomHelpCommand.prototype.init = function() {
       this.command = '!roomhelp';
       this.parseType = 'startsWith';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'featured';
     };
 
     roomHelpCommand.prototype.functionality = function() {
@@ -1088,7 +1086,7 @@
     };
 
     lockCommand.prototype.functionality = function() {
- //     API.sendChat('Pop and lock dat ish');
+      API.sendChat('Pop and lock dat ish');
       return data.lockBooth();
     };
 
@@ -1111,7 +1109,7 @@
     };
 
     unlockCommand.prototype.functionality = function() {
-//      API.sendChat('You\'ll never get the key to unlock my heart');
+      API.sendChat('You\'ll never get the key to unlock my heart');
       return data.unlockBooth();
     };
 
@@ -1143,15 +1141,15 @@
         userRemove = r.lookupUser(users[0]);
         userAdd = r.lookupUser(users[1]);
         if (userRemove === false || userAdd === false) {
-       //   API.sendChat('Error parsing one or both names');
+          API.sendChat('Error parsing one or both names');
           return false;
         } else {
           return data.lockBooth(function() {
             API.moderateRemoveDJ(userRemove.id);
-        //    API.sendChat("Removing " + userRemove.username + "...");
+            API.sendChat("Removing " + userRemove.username + "...");
             return setTimeout(function() {
               API.moderateAddDJ(userAdd.id);
-        //      API.sendChat("Adding " + userAdd.username + "...");
+              API.sendChat("Adding " + userAdd.username + "...");
               return setTimeout(function() {
                 return data.unlockBooth();
               }, 1500);
@@ -1159,7 +1157,7 @@
           });
         }
       } else {
-  //      return API.sendChat("Command didn't parse into two seperate usernames");
+        return API.sendChat("Command didn't parse into two seperate usernames");
       }
     };
 
@@ -1630,7 +1628,7 @@
   handleUserJoin = function(user) {
     data.userJoin(user);
     data.users[user.id].updateActivity();
-    return API.sendChat("@" + user.username + " welcome to this Room!");
+    return API.sendChat("@" + user.username + " welcome to this room!");
   };
 
   handleNewSong = function(obj) {
