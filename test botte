@@ -1616,9 +1616,9 @@
   };
 
   updateVotes = function(obj) {
-    data.currentwoots = room-score-positive;
-    data.currentmehs = room-score-negative;
-    return data.currentcurates = room-score-curates;
+    data.currentwoots = room-score-positive-value;
+    data.currentmehs = room-score-negative-value;
+    return data.currentcurates = room-score-curates-value;
   };
 
   announceCurate = function(obj) {
