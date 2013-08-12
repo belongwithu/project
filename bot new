@@ -65,7 +65,7 @@
       {
         interval: 15,
         offset: 0,
-        msg: "I'm a bot!"
+  //      msg: "I'm a bot!"
       }
     ];
 
@@ -341,7 +341,7 @@
   })();
 
   pupOnline = function() {
-    return API.sendChat("Bot Online!");
+//    return API.sendChat("Bot Online!");
   };
 
   populateUserData = function() {
@@ -618,7 +618,7 @@
     newSongsCommand.prototype.init = function() {
       this.command = '!newsongs';
       this.parseType = 'startsWith';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     newSongsCommand.prototype.functionality = function() {
@@ -677,7 +677,7 @@
     whyWootCommand.prototype.init = function() {
       this.command = '!whywoot';
       this.parseType = 'startsWith';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     whyWootCommand.prototype.functionality = function() {
@@ -710,8 +710,8 @@
 
     themeCommand.prototype.functionality = function() {
       var msg;
-      msg = "Any type of Bass Music is allowed here. Including Dubstep, Complextro, Drum and Bass, ";
-      msg += "Garage, Breakbeat, Hardstyle, Moombahton, HEAVY EDM, House, Electro, and Trance!!";
+      msg = "This room play good sound quality music. ";
+      msg += "Don't play dubstep , electro , metal rock or porn!!";
       return API.sendChat(msg);
     };
 
@@ -736,8 +736,9 @@
     rulesCommand.prototype.functionality = function() {
       var msg;
       msg = "1) Play good sound quality music. ";
-      msg += "2) Don't replay a song on the room history. 3) Max song limit 8 minutes. ";
-      msg += "4) DO NOT GO AWAY FROM KEYBOARD ON DECK! Please WOOT on DJ Booth and respect your fellow DJs!";
+	  msg += "2) Don't play dubstep , electro , metal rock or porn. ";
+      msg += "3) Don't replay a song on the room history. 4) Max song limit 7 minutes. ";
+      msg += "5) 8 mehs we will skip 6) Don't rude. ";
       return API.sendChat(msg);
     };
 
@@ -761,10 +762,8 @@
 
     roomHelpCommand.prototype.functionality = function() {
       var msg1, msg2;
-      msg1 = "Welcome to the Dubstep Den! Create a playlist and populate it with songs from either YouTube or Soundcloud.  ";
-      msg1 += "Click the 'Join Waitlist' button and wait your turn to play music. Most electronic music allowed, type '/theme' for specifics.";
-      msg2 = "Stay active while waiting to play your song or I'll remove you.  Play good quality music that hasn't been played recently (check room history).  ";
-      msg2 += "Avoid over played artists like Skrillex. Ask a mod if you're unsure about your song choice";
+      msg1 = "Welcome to Sabai_Sataichillchill.  ";
+	  msg += "How to play :: http://youtu.be/fhpvrMcyYLk";
       API.sendChat(msg1);
       return setTimeout((function() {
         return API.sendChat(msg2);
@@ -786,7 +785,7 @@
     sourceCommand.prototype.init = function() {
       this.command = ['/source', '/sourcecode', '/author'];
       this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     sourceCommand.prototype.functionality = function() {
@@ -810,7 +809,7 @@
     wootCommand.prototype.init = function() {
       this.command = '!woot';
       this.parseType = 'startsWith';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     wootCommand.prototype.functionality = function() {
@@ -862,7 +861,7 @@
     downloadCommand.prototype.init = function() {
       this.command = '!download';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     downloadCommand.prototype.functionality = function() {
@@ -894,7 +893,7 @@
     afksCommand.prototype.init = function() {
       this.command = '!afks';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     afksCommand.prototype.functionality = function() {
@@ -934,7 +933,7 @@
     allAfksCommand.prototype.init = function() {
       this.command = '!allafks';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     allAfksCommand.prototype.functionality = function() {
@@ -974,7 +973,7 @@
     statusCommand.prototype.init = function() {
       this.command = '!status';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     statusCommand.prototype.functionality = function() {
@@ -1177,7 +1176,7 @@
     }
 
     popCommand.prototype.init = function() {
-      this.command = '!pop';
+      this.command = '!remove';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
@@ -1202,7 +1201,7 @@
     }
 
     pushCommand.prototype.init = function() {
-      this.command = '!push';
+      this.command = '!add';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'mod';
     };
@@ -1305,7 +1304,7 @@
     overplayedCommand.prototype.init = function() {
       this.command = '!overplayed';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     overplayedCommand.prototype.functionality = function() {
@@ -1327,7 +1326,7 @@
     uservoiceCommand.prototype.init = function() {
       this.command = ['/uservoice', '/idea'];
       this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     uservoiceCommand.prototype.functionality = function() {
@@ -1374,7 +1373,7 @@
     whyMehCommand.prototype.init = function() {
       this.command = '!whymeh';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     whyMehCommand.prototype.functionality = function() {
@@ -1397,9 +1396,9 @@
     }
 
     commandsCommand.prototype.init = function() {
-      this.command = '!commands';
+      this.command = '!notforuse';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
+      return this.rankPrivelege = 'manager';
     };
 
     commandsCommand.prototype.functionality = function() {
