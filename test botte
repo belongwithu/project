@@ -1616,9 +1616,9 @@
   };
 
   updateVotes = function(obj) {
-    data.currentwoots = userdata.wootcount;
-    data.currentmehs = userdata.mehcount;
-    return data.currentcurates = userdata.curatescount;
+    data.currentwoots = obj.positive;
+    data.currentmehs = obj.negative;
+    return data.currentcurates = obj.curates;
   };
 
   announceCurate = function(obj) {
