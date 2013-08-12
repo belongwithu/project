@@ -376,9 +376,7 @@
 
   initEnvironment = function() {
     document.getElementById("button-vote-positive").click();
-    document.getElementById("button-sound").click();
-    Playback.streamDisabled = true;
-    return Playback.stop();
+    return document.getElementById("button-sound").click();
   };
 
   initialize = function() {
@@ -639,7 +637,7 @@
     }
 
     newSongsCommand.prototype.init = function() {
-      this.command = '/nedsa56wd5sa6sdsaongs';
+      this.command = '!nedsa56wd5sa6sdsaongs';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'user';
     };
@@ -698,7 +696,7 @@
     }
 
     whyWootCommand.prototype.init = function() {
-      this.command = '/wd5sa6hda5y3wo5dsaot';
+      this.command = '!wd5sa6hda5y3wo5dsaot';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'user';
     };
@@ -726,7 +724,7 @@
     }
 
     themeCommand.prototype.init = function() {
-      this.command = '/theme';
+      this.command = '!theme';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
@@ -751,7 +749,7 @@
     }
 
     rulesCommand.prototype.init = function() {
-      this.command = '/rules';
+      this.command = '!rules';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
@@ -777,7 +775,7 @@
     }
 
     roomHelpCommand.prototype.init = function() {
-      this.command = '/roomhelp';
+      this.command = '!roomhelp';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
@@ -802,7 +800,7 @@
     }
 
     sourceCommand.prototype.init = function() {
-      this.command = ['/sdsaoud4r2ce', '/sdsaourc32ec56dsde', '/au24dsadst6hdsr'];
+      this.command = ['!sdsaoud4r2ce', '!sdsaourc32ec56dsde', '!au24dsadst6hdsr'];
       this.parseType = 'exact';
       return this.rankPrivelege = 'user';
     };
@@ -826,7 +824,7 @@
     }
 
     wootCommand.prototype.init = function() {
-      this.command = '/dsadsdsaaodsft';
+      this.command = '!dsadsdsaaodsft';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'user';
     };
@@ -878,7 +876,7 @@
     }
 
     downloadCommand.prototype.init = function() {
-      this.command = '/ddsaw24owdsnlfsaogdsad';
+      this.command = '!ddsaw24owdsnlfsaogdsad';
       this.parseType = 'exact';
       return this.rankPrivelege = 'user';
     };
@@ -910,7 +908,7 @@
     }
 
     afksCommand.prototype.init = function() {
-      this.command = '/adsafdsaksdsa';
+      this.command = '!adsafdsaksdsa';
       this.parseType = 'exact';
       return this.rankPrivelege = 'user';
     };
@@ -950,7 +948,7 @@
     }
 
     allAfksCommand.prototype.init = function() {
-      this.command = '/adsdslfsalggfdahfdfgfdks';
+      this.command = '!adsdslfsalggfdahfdfgfdks';
       this.parseType = 'exact';
       return this.rankPrivelege = 'user';
     };
@@ -990,7 +988,7 @@
     }
 
     statusCommand.prototype.init = function() {
-      this.command = '/sdsatdsaadsatdsauds';
+      this.command = '!sdsatdsaadsatdsauds';
       this.parseType = 'exact';
       return this.rankPrivelege = 'user';
     };
@@ -1025,7 +1023,7 @@
     }
 
     unhookCommand.prototype.init = function() {
-      this.command = '/udsanhdsaododsk evdsaendsats aldsl';
+      this.command = '!udsanhdsaododsk evdsaendsats aldsl';
       this.parseType = 'exact';
       return this.rankPrivelege = 'host';
     };
@@ -1048,7 +1046,7 @@
     }
 
     dieCommand.prototype.init = function() {
-      this.command = '/dsaddsaidsae';
+      this.command = '!dsaddsaidsae';
       this.parseType = 'exact';
       return this.rankPrivelege = 'host';
     };
@@ -1074,7 +1072,7 @@
     }
 
     reloadCommand.prototype.init = function() {
-      this.command = '/rdsaedsaldsaoaadsad';
+      this.command = '!rdsaedsaldsaoaadsad';
       this.parseType = 'exact';
       return this.rankPrivelege = 'host';
     };
@@ -1101,7 +1099,7 @@
     }
 
     lockCommand.prototype.init = function() {
-      this.command = '/lock';
+      this.command = '!lock';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
@@ -1124,7 +1122,7 @@
     }
 
     unlockCommand.prototype.init = function() {
-      this.command = '/unlock';
+      this.command = '!unlock';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
@@ -1147,7 +1145,7 @@
     }
 
     swapCommand.prototype.init = function() {
-      this.command = '/sdsawdsaadsap';
+      this.command = '!sdsawdsaadsap';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'mod';
     };
@@ -1195,7 +1193,7 @@
     }
 
     popCommand.prototype.init = function() {
-      this.command = '/pop';
+      this.command = '!pop';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
@@ -1220,7 +1218,7 @@
     }
 
     pushCommand.prototype.init = function() {
-      this.command = '/push';
+      this.command = '!push';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'mod';
     };
@@ -1251,7 +1249,7 @@
     }
 
     resetAfkCommand.prototype.init = function() {
-      this.command = '/rdsaessestassk';
+      this.command = '!rdsaessestassk';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'mod';
     };
@@ -1288,7 +1286,7 @@
     }
 
     forceSkipCommand.prototype.init = function() {
-      this.command = '/forceskip';
+      this.command = '!forceskip';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1321,7 +1319,7 @@
     }
 
     overplayedCommand.prototype.init = function() {
-      this.command = '/dsaovdsaedsarpdsaladsayed';
+      this.command = '!dsaovdsaedsarpdsaladsayed';
       this.parseType = 'exact';
       return this.rankPrivelege = 'user';
     };
@@ -1343,7 +1341,7 @@
     }
 
     uservoiceCommand.prototype.init = function() {
-      this.command = ['/usdsaedsarvoidsae', '/iddsaea'];
+      this.command = ['!usdsaedsarvoidsae', '!iddsaea'];
       this.parseType = 'exact';
       return this.rankPrivelege = 'user';
     };
@@ -1368,7 +1366,7 @@
     }
 
     skipCommand.prototype.init = function() {
-      this.command = '/skip';
+      this.command = '!skip';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1390,7 +1388,7 @@
     }
 
     whyMehCommand.prototype.init = function() {
-      this.command = '/wdshdsaymedsh';
+      this.command = '!wdshdsaymedsh';
       this.parseType = 'exact';
       return this.rankPrivelege = 'user';
     };
@@ -1415,7 +1413,7 @@
     }
 
     commandsCommand.prototype.init = function() {
-      this.command = '/commands';
+      this.command = '!commands';
       this.parseType = 'exact';
       return this.rankPrivelege = 'featured';
     };
@@ -1464,7 +1462,7 @@
     }
 
     disconnectLookupCommand.prototype.init = function() {
-      this.command = '/dddsacdaodsaokup';
+      this.command = '!dddsacdaodsaokup';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'mod';
     };
@@ -1538,7 +1536,7 @@
     }
 
     voteRatioCommand.prototype.init = function() {
-      this.command = '/vofdsterdsaadsatio';
+      this.command = '!vofdsterdsaadsatio';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'mod';
     };
@@ -1587,7 +1585,7 @@
     }
 
     avgVoteRatioCommand.prototype.init = function() {
-      this.command = '/avdsagvotdsardstiso';
+      this.command = '!vdsagvotdsardstiso';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
