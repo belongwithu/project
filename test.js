@@ -1616,9 +1616,9 @@
   };
 
   updateVotes = function(obj) {
-    data.currentwoots = obj.positive;
-    data.currentmehs = obj.negative;
-    return data.currentcurates = obj.curates;
+    currentwoots = obj.positive;
+    currentmehs = obj.negative;
+    return currentcurates = obj.curates;
   };
 
   announceCurate = function(obj) {
@@ -1637,7 +1637,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: " + data.currentsong.title + " by " + data.currentsong.author + ". :white_check_mark: " + data.currentwoots + ", :negative_squared_cross_mark: " + data.currentmehs + ", :heart_decoration: " + data.currentcurates + ".");
+      API.sendChat("/em: " + data.currentsong.title + " by " + data.currentsong.author + ". :white_check_mark: " + currentwoots + ", :negative_squared_cross_mark: " + currentmehs + ", :heart_decoration: " + currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
