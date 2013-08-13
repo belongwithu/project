@@ -1637,7 +1637,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: " + data.currentsong.title + " by " + data.currentsong.author + ". :white_check_mark: " + obj.positive + ", :negative_squared_cross_mark: " + obj.negative + ", :heart_decoration: " + obj.curates + ".");
+      API.sendChat("/em: " + data.currentsong.title + " by " + data.currentsong.author + ". :white_check_mark: " + data.currentwoots + ", :negative_squared_cross_mark: " + data.currentmehs + ", :heart_decoration: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
