@@ -1709,18 +1709,13 @@
   };
 
   antispam = function(chat) {
-    var plugRoomLinkPatt, sender;
-    plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    if (plugRoomLinkPatt.exec(chat.message)) {
-      sender = API.getUser(chat.fromID);
-      if (!sender.ambassador && !sender.moderator && !sender.owner && !sender.superuser) {
-        if (!data.users[chat.fromID]["protected"]) {
-          API.sendChat("Don't spam room links you ass clown");
-          return API.moderateDeleteChat(chat.chatID);
-        } else {
-          return API.sendChat("I'm supposed to kick you, but you're just too darn pretty.");
-        }
-      }
+    var msg, r, responses;
+    msg = chat.message.toLowerCase();
+    responses = ["Don't spam you link @{beggar}!"];
+    r = Math.floor(Math.random() * responses.length);
+    if (msg.indexOf('http://adf.ly/') !== -1 || msg.indexOf('http://plug.dj/') !== -1 ) {
+      API.sendChat(responses[r].replace("{beggar}", chat.from));
+      return API.moderateDeleteChat(chat.chatID);
     }
   };
 
@@ -1729,7 +1724,7 @@
     msg = chat.message.toLowerCase();
     responses = ["Don't ask for fan @{beggar}!"];
     r = Math.floor(Math.random() * responses.length);
-    if (msg.indexOf('fan me') !== -1 || msg.indexOf('fan for fan') !== -1 || msg.indexOf('fan pls') !== -1 || msg.indexOf('fan4fan') !== -1 || msg.indexOf('fan 4 fan') !== -1 || msg.indexOf('fan plz') !== -1 || msg.indexOf('add me to fan') !== -1) {
+    if (msg.indexOf('fan me') !== -1 || msg.indexOf('fun me') !== -1 || msg.indexOf('become my fan') !== -1 || msg.indexOf('troco fa') !== -1 || msg.indexOf('fan for fan') !== -1 || msg.indexOf('fan 4 fan') !== -1 || msg.indexOf('add me to fan') !== -1 || msg.indexOf('fan4fan') !== -1 || msg.indexOf('fun4fun') !== -1 || msg.indexOf('fun 4 fun') !== -1 || msg.indexOf('virem meu fa') !== -1 || msg.indexOf('is now your fan') !== -1 || msg.indexOf('reciprocate') !== -1 || msg.indexOf('fans me') !== -1 || msg.indexOf('give fan') !== -1 || msg.indexOf('fan plz') !== -1 || msg.indexOf('fan pls') !== -1 || msg.indexOf('pls fan') !== -1 || msg.indexOf('plz fan') !== -1 || msg.indexOf('become fan') !== -1 || msg.indexOf('trade fan') !== -1 || msg.indexOf('fan i fan') !== -1 || msg.indexOf('be my fan') !== -1 || msg.indexOf('is now you fan') !== -1) {
       API.sendChat(responses[r].replace("{beggar}", chat.from));
       return API.moderateDeleteChat(chat.chatID);
     }
