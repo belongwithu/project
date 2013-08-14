@@ -1729,7 +1729,7 @@
     msg = chat.message.toLowerCase();
     responses = ["Don't ask for fan @{beggar}!"];
     r = Math.floor(Math.random() * responses.length);
-    if (msg.indexOf('fan me') !== -1 || msg.indexOf('fan for fan') !== -1 || msg.indexOf('fan pls') !== -1 || msg.indexOf('fan4fan') !== -1 || msg.indexOf('add me to fan') !== -1) {
+    if (msg.indexOf('fan me') !== -1 || msg.indexOf('fan for fan') !== -1 || msg.indexOf('fan pls') !== -1 || msg.indexOf('fan4fan') !== -1 || msg.indexOf('fan 4 fan') !== -1 || msg.indexOf('fan plz') !== -1 || msg.indexOf('add me to fan') !== -1) {
       API.sendChat(responses[r].replace("{beggar}", chat.from));
       return API.moderateDeleteChat(chat.chatID);
     }
