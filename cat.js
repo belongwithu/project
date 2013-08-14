@@ -389,9 +389,7 @@
 
   initEnvironment = function() {
     document.getElementById("button-vote-positive").click();
-    document.getElementById("button-sound").click();
-    Playback.streamDisabled = true;
-    return Playback.stop();
+    return document.getElementById("button-sound").click();
   };
 
   initialize = function() {
@@ -558,7 +556,7 @@
     }
 
     newsCommand.prototype.init = function() {
-      this.command = '/news';
+      this.command = '!news';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -583,7 +581,7 @@
     }
 
     newSongsCommand.prototype.init = function() {
-      this.command = '/newsongs';
+      this.command = '!newsongs';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
@@ -644,7 +642,7 @@
     }
 
     themeCommand.prototype.init = function() {
-      this.command = '/theme';
+      this.command = '!theme';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
@@ -670,7 +668,7 @@
     }
 
     rulesCommand.prototype.init = function() {
-      this.command = '/rules';
+      this.command = '!rules';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
@@ -704,7 +702,7 @@
     }
 
     mcCommand.prototype.init = function() {
-      this.command = '/minecraft';
+      this.command = '!minecraft';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -726,7 +724,7 @@
     }
 
     roomHelpCommand.prototype.init = function() {
-      this.command = '/roomhelp';
+      this.command = '!roomhelp';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
@@ -798,7 +796,7 @@
     }
 
     allAfksCommand.prototype.init = function() {
-      this.command = '/allafks';
+      this.command = '!allafks';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
@@ -839,7 +837,7 @@
     }
 
     statusCommand.prototype.init = function() {
-      this.command = '/status';
+      this.command = '!status';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -875,7 +873,7 @@
     }
 
     dieCommand.prototype.init = function() {
-      this.command = '/die';
+      this.command = '!die';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
@@ -901,7 +899,7 @@
     }
 
     reloadCommand.prototype.init = function() {
-      this.command = '/reload';
+      this.command = '!reload';
       this.parseType = 'exact';
       return this.rankPrivelege = 'manager';
     };
@@ -929,7 +927,7 @@
     }
 
     lockCommand.prototype.init = function() {
-      this.command = '/lock';
+      this.command = '!lock';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
@@ -951,7 +949,7 @@
     }
 
     unlockCommand.prototype.init = function() {
-      this.command = '/unlock';
+      this.command = '!unlock';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -973,7 +971,7 @@
     }
 
     removeCommand.prototype.init = function() {
-      this.command = '/remove';
+      this.command = '!remove';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -999,7 +997,7 @@
     }
 
     opsongCommand.prototype.init = function() {
-      this.command = '/op';
+      this.command = '!op';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1024,7 +1022,7 @@
     }
 
     addCommand.prototype.init = function() {
-      this.command = '/add';
+      this.command = '!add';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1059,7 +1057,7 @@
     }
 
     swapCommand.prototype.init = function() {
-      this.command = '/swap';
+      this.command = '!swap';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'manager';
     };
@@ -1108,7 +1106,7 @@
     }
 
     skipCommand.prototype.init = function() {
-      this.command = '/skip';
+      this.command = '!skip';
       this.parseType = 'exact';
       this.rankPrivelege = 'bouncer';
       return window.lastSkipTime;
@@ -1143,7 +1141,7 @@
     }
 
     disconnectLookupCommand.prototype.init = function() {
-      this.command = '/dclookup';
+      this.command = '!dclookup';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1218,7 +1216,7 @@
     }
 
     voteRatioCommand.prototype.init = function() {
-      this.command = '/voteratio';
+      this.command = '!voteratio';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1310,7 +1308,7 @@
     }
 
     infoCommand.prototype.init = function() {
-      this.command = '/info';
+      this.command = '!info';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1335,7 +1333,7 @@
     }
 
     avgVoteRatioCommand.prototype.init = function() {
-      this.command = '/avgvoteratio';
+      this.command = '!avgvoteratio';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
@@ -1375,7 +1373,7 @@
     }
 
     staffCommand.prototype.init = function() {
-      this.command = '/staff';
+      this.command = '!staff';
       this.parseType = 'exact';
       this.rankPrivelege = 'user';
       return window.lastActiveStaffTime;
@@ -1432,7 +1430,7 @@
     }
 
     lockskipCommand.prototype.init = function() {
-      this.command = '/lockskip';
+      this.command = '!lockskip';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1458,7 +1456,7 @@
     }
 
     promoCommand.prototype.init = function() {
-      this.command = '/tastycat';
+      this.command = '!tastycat';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
@@ -1480,7 +1478,7 @@
     }
 
     versionCommand.prototype.init = function() {
-      this.command = '/version';
+      this.command = '!version';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
@@ -1663,11 +1661,11 @@
   };
 
   hook = function(apiEvent, callback) {
-    return API.addEventListener(apiEvent, callback);
+    return API.on(apiEvent, callback);
   };
 
   unhook = function(apiEvent, callback) {
-    return API.removeEventListener(apiEvent, callback);
+    return API.off(apiEvent, callback);
   };
 
   apiHooks = [
