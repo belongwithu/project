@@ -1126,9 +1126,9 @@
     }
 
     lockskipCommand.prototype.init = function() {
-      this.command = '/lockskip';
+      this.command = '!lockskip';
       this.parseType = 'startsWith';
-      return this.rankPrivelege = 'bouncer';
+      return this.rankPrivelege = 'manager';
     };
 
     lockskipCommand.prototype.functionality = function() {
