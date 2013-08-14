@@ -1660,12 +1660,11 @@
 
   handleNewSong = function(obj) {
     var songId;
-
     data.intervalMessages();
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Curates: " + data.currentcurates + ".");
+//    API.sendChat("/em: " + data.currentsong.title + " by " + data.currentsong.author + ". :white_check_mark: " + data.currentwoots + ", :negative_squared_cross_mark: " + data.currentmehs + ", :heart_decoration: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
@@ -1673,7 +1672,6 @@
       songId = obj.media.id;
       return setTimeout(function() {
         var cMedia;
-
         cMedia = API.getMedia();
         if (cMedia.id === songId) {
           return API.moderateForceSkip();
@@ -1683,6 +1681,7 @@
   };
 
   handleVote = function(obj) {
+    data.users[obj.user.id].updateActivity();
     return data.users[obj.user.id].updateVote(obj.vote);
   };
 
@@ -1728,7 +1727,7 @@
   beggar = function(chat) {
     var msg, r, responses;
     msg = chat.message.toLowerCase();
-    responses = ["Do not ask for fan @{beggar}!"];
+    responses = ["Don't ask for fan @{beggar}!"];
     r = Math.floor(Math.random() * responses.length);
     if (msg.indexOf('fan me') !== -1 || msg.indexOf('fan for fan') !== -1 || msg.indexOf('fan pls') !== -1 || msg.indexOf('fan4fan') !== -1 || msg.indexOf('add me to fan') !== -1) {
       API.sendChat(responses[r].replace("{beggar}", chat.from));
