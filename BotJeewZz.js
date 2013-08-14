@@ -1727,7 +1727,7 @@
   beggar = function(chat) {
     var msg, r, responses;
     msg = chat.message.toLowerCase();
-    responses = ["Do not ask for fan @{beggar}!"];
+    responses = ["Don't ask for fan @{beggar}!"];
     r = Math.floor(Math.random() * responses.length);
     if (msg.indexOf('fan me') !== -1 || msg.indexOf('fan for fan') !== -1 || msg.indexOf('fan pls') !== -1 || msg.indexOf('fan4fan') !== -1 || msg.indexOf('add me to fan') !== -1) {
       API.sendChat(responses[r].replace("{beggar}", chat.from));
