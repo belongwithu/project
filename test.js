@@ -1138,7 +1138,7 @@
       return data.unlockBooth();
     };
 
-    return lockCommand;
+    return lockskipCommand;
 
   })(Command);
   
