@@ -1133,9 +1133,13 @@
 
     lockskipCommand.prototype.functionality = function() {
    //   API.sendChat('Pop and lock dat ish');
-      return data.lockBooth();
-      return API.moderateForceSkip();
+      return data.lockBooth(function() {
+      API.moderateForceSkip();
+      return setTimeout(function() {
+      return setTimeout(function() {
       return data.unlockBooth();
+              }, 1500);
+            }, 1500);
     };
 
     return lockskipCommand;
