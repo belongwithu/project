@@ -1709,18 +1709,13 @@
   };
 
   antispam = function(chat) {
-    var plugRoomLinkPatt, sender;
-    plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    if (plugRoomLinkPatt.exec(chat.message)) {
-      sender = API.getUser(chat.fromID);
-      if (!sender.ambassador && !sender.moderator && !sender.owner && !sender.superuser) {
-        if (!data.users[chat.fromID]["protected"]) {
-          API.sendChat("Don't spam room links you ass clown");
-          return API.moderateDeleteChat(chat.chatID);
-        } else {
-          return API.sendChat("I'm supposed to kick you, but you're just too darn pretty.");
-        }
-      }
+    var msg, r, responses;
+    msg = chat.message.toLowerCase();
+    responses = ["Don't spam you link @{beggar}!"];
+    r = Math.floor(Math.random() * responses.length);
+    if (msg.indexOf('http://adf.ly/') !== -1 || msg.indexOf('http://plug.dj/') !== -1 ) {
+      API.sendChat(responses[r].replace("{beggar}", chat.from));
+      return API.moderateDeleteChat(chat.chatID);
     }
   };
 
