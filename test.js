@@ -1135,7 +1135,7 @@
       return data.lockBooth(function() {
         return setTimeout(function() {}, API.moderateForceSkip(), setTimeout(function() {
           return data.unlockBooth();
-        }, 5000), 5000);
+        }, 1000), 1000);
       });
     };
 
