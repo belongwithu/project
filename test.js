@@ -1117,29 +1117,26 @@
 
   })(Command);
   
-  lockskipCommand = (function(_super) {
+    lockskipCommand = (function(_super) {
     __extends(lockskipCommand, _super);
 
     function lockskipCommand() {
-      _ref99 = lockskipCommand.__super__.constructor.apply(this, arguments);
-      return _ref99;
+      _ref24 = lockskipCommand.__super__.constructor.apply(this, arguments);
+      return _ref24;
     }
 
     lockskipCommand.prototype.init = function() {
-      this.command = '!lockskip';
-      this.parseType = 'exact';
-      return this.rankPrivelege = 'mod';
+      this.command = '/lockskip';
+      this.parseType = 'startsWith';
+      return this.rankPrivelege = 'bouncer';
     };
 
     lockskipCommand.prototype.functionality = function() {
-   //   API.sendChat('Pop and lock dat ish');
       return data.lockBooth(function() {
-      API.moderateForceSkip();
-      return setTimeout(function() {
-      return setTimeout(function() {
-      return data.unlockBooth();
-              }, 1500);
-            }, 1500);
+        return setTimeout(function() {}, API.moderateForceSkip(), setTimeout(function() {
+          return data.unlockBooth();
+        }, 5000), 5000);
+      });
     };
 
     return lockskipCommand;
