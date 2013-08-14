@@ -367,13 +367,7 @@
   })();
 
   pupOnline = function() {
-    var currentversion, me, myname;
-
-    me = API.getSelf();
-    myname = me.username;
-    currentversion = "1.1.0";
-    log("TastycatBOT version " + currentversion + " started");
-    return API.sendChat("Have no fear, " + myname + " is here!");
+ //   return API.sendChat("Bot Online!");
   };
 
   populateUserData = function() {
