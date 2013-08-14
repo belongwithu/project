@@ -101,9 +101,8 @@
       }
     };
 
-    settings.prototype.userJoin = function(u) {
+     settings.prototype.userJoin = function(u) {
       var userIds, _ref;
-
       userIds = Object.keys(this.users);
       if (_ref = u.id, __indexOf.call(userIds, _ref) >= 0) {
         return this.users[u.id].inRoom(true);
@@ -115,7 +114,6 @@
 
     settings.prototype.setInternalWaitlist = function() {
       var boothWaitlist, fullWaitList, lineWaitList;
-
       boothWaitlist = API.getDJs().slice(1);
       lineWaitList = API.getWaitList();
       fullWaitList = boothWaitlist.concat(lineWaitList);
@@ -131,6 +129,7 @@
     settings.prototype.startAfkInterval = function() {
       return this.afkInterval = setInterval(afkCheck, 2000);
     };
+
 
     settings.prototype.intervalMessages = function() {
       var msg, _i, _len, _ref, _results;
