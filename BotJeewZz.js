@@ -710,8 +710,8 @@
 
     themeCommand.prototype.functionality = function() {
       var msg;
-      msg = "This room play good sound quality music. ";
-      msg += "Don't play dubstep , electro , metal rock or porn!!";
+      msg = "ห้องนี้เปิดเพลงฟังสบายๆ ห้ามเปิดเพลงแนว dubstep, electro, metal rock, ";
+      msg += "เพลงดนตรีหนักๆ และเพลงที่ส่อไปแนวลามก!!";
       return API.sendChat(msg);
     };
 
@@ -735,10 +735,10 @@
 
     rulesCommand.prototype.functionality = function() {
       var msg;
-      msg = "1) Play good sound quality music. ";
-      msg += "2) Don't play dubstep , electro , metal rock or porn. ";
-      msg += "3) Don't replay a song on the room history. 4) Max song limit 7 minutes. ";
-      msg += "5) 8 mehs we will skip 6) Don't rude. ";
+      msg = "1) เปิดเพลงฟังสบายๆ ";
+      msg += "2) ห้ามเปิดเพลงแนว dubstep, metal rock, เพลงmvลามก";
+      msg += "3) ห้ามเปิดเพลงซ้ำกับใน History 4) ห้ามเปิดเพลงที่นานกว่า 7นาที ";
+      msg += "5) 8 mehs = skip 6) ห้ามหยาบ ";
       return API.sendChat(msg);
     };
 
@@ -762,8 +762,8 @@
 
     roomHelpCommand.prototype.functionality = function() {
       var msg;
-      msg = "Welcome to Sabai_Sataichillchill. ";
-      msg += "How to play :: http://youtu.be/fhpvrMcyYLk ";
+      msg = " ยินดีต้อนรับสู่ห้องฟังเพลงสบายๆ ใครฝึกหัดเล่นให้ดูวิธีเล่นจากเว๊ปนี้  ";
+      msg += "http://youtu.be/fhpvrMcyYLk ";
 
       return API.sendChat(msg);
     };
