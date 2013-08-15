@@ -1649,7 +1649,7 @@
   };
 
   announceCurate = function(obj) {
-    return API.sendChat("@" + obj.user.username + " add this song!");
+//    return API.sendChat("@" + obj.user.username + " add this song!");
   };
 
   handleUserJoin = function(user) {
