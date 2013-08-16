@@ -29,11 +29,11 @@
 
     settings.prototype.hasWarned = false;
 
-    settings.prototype.obj.positive = 0;
+    settings.prototype.positive = 0;
 
-    settings.prototype.obj.negative = 0;
+    settings.prototype.negative = 0;
 
-    settings.prototype.obj.curates = 0;
+    settings.prototype.curates = 0;
 
     settings.prototype.roomUrlPath = null;
 
