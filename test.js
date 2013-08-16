@@ -319,6 +319,7 @@
 
     RoomHelper.prototype.userVoteRatio = function(user) {
       var songId, songVotes, vote, votes;
+
       songVotes = data.voteLog[user.id];
       votes = {
         'woot': 0,
