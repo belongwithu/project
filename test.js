@@ -1658,13 +1658,14 @@
     return API.sendChat("@" + user.username + " welcome to this room!");
   };
 
-  handleNewSong = function(obj) {
+    handleNewSong = function(obj) {
     var songId;
+
     data.intervalMessages();
     if (data.currentsong === null) {
       data.newSong();
     } else {
-//    API.sendChat("/em: " + data.currentsong.title + " by " + data.currentsong.author + ". :white_check_mark: " + data.currentwoots + ", :negative_squared_cross_mark: " + data.currentmehs + ", :heart_decoration: " + data.currentcurates + ".");
+      API.sendChat("/em: " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Curates: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
