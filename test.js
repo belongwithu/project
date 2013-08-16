@@ -1646,9 +1646,9 @@
   };
 
   updateVotes = function(obj) {
-    data.currentwoots = obj.positive;
-    data.currentmehs = obj.negative;
-    return data.currentcurates = obj.curates;
+    obj.positive;
+    obj.negative;
+    return obj.curates;
   };
 
   announceCurate = function(obj) {
@@ -1668,7 +1668,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: " + data.currentsong.title + " - " + data.currentsong.author + " ~~ " + data.currentwoots + " woots ~ " + data.currentmehs + " mehs ~ " + data.currentcurates + " curates");
+      API.sendChat("/em: " + data.currentsong.title + " - " + data.currentsong.author + " ~~ " + obj.positive + " woots ~ " + obj.negative + " mehs ~ " + obj.curates + " curates");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
