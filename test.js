@@ -1668,7 +1668,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Curates: " + data.currentcurates + ".");
+      API.sendChat("/em: " + data.currentsong.title + " - " + data.currentsong.author + " ~~ " + data.currentwoots + " woots ~ " + data.currentmehs + " mehs ~ " + data.currentcurates + " curates");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
