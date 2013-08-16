@@ -1648,7 +1648,7 @@
   updateVotes = function(obj) {
     data.currentwoots = obj.positive;
     data.currentmehs = obj.negative;
-    data.currentcurates = obj.curates;
+    return data.currentcurates = obj.curates;
   };
 
   announceCurate = function(obj) {
