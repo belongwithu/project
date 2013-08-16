@@ -347,6 +347,7 @@
 
   populateUserData = function() {
     var u, users, _i, _len;
+
     users = API.getUsers();
     for (_i = 0, _len = users.length; _i < _len; _i++) {
       u = users[_i];
@@ -1541,18 +1542,19 @@
     __extends(voteRatioCommand, _super);
 
     function voteRatioCommand() {
-      _ref29 = voteRatioCommand.__super__.constructor.apply(this, arguments);
-      return _ref29;
+      _ref19 = voteRatioCommand.__super__.constructor.apply(this, arguments);
+      return _ref19;
     }
 
     voteRatioCommand.prototype.init = function() {
-      this.command = '!voteratio';
+      this.command = '/voteratio';
       this.parseType = 'startsWith';
-      return this.rankPrivelege = 'mod';
+      return this.rankPrivelege = 'bouncer';
     };
 
     voteRatioCommand.prototype.functionality = function() {
       var msg, name, r, u, votes;
+
       r = new RoomHelper();
       msg = this.msgData.message;
       if (msg.length > 12) {
@@ -1659,7 +1661,7 @@
     return API.sendChat("@" + user.username + " welcome to this room!");
   };
 
-    handleNewSong = function(obj) {
+     handleNewSong = function(obj) {
     var songId;
 
     data.intervalMessages();
@@ -1674,12 +1676,17 @@
       songId = obj.media.id;
       return setTimeout(function() {
         var cMedia;
+
         cMedia = API.getMedia();
         if (cMedia.id === songId) {
           return API.moderateForceSkip();
         }
       }, obj.media.duration * 1000);
     }
+  };
+
+  handleVote = function(obj) {
+    return data.users[obj.user.id].updateVote(obj.vote);
   };
 
   handleVote = function(obj) {
