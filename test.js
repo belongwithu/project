@@ -1689,11 +1689,6 @@
     return data.users[obj.user.id].updateVote(obj.vote);
   };
 
-  handleVote = function(obj) {
-    data.users[obj.user.id].updateActivity();
-    return data.users[obj.user.id].updateVote(obj.vote);
-  };
-
   handleUserLeave = function(user) {
     var disconnectStats, i, u, _i, _len, _ref31;
     disconnectStats = {
