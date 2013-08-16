@@ -29,11 +29,11 @@
 
     settings.prototype.hasWarned = false;
 
-    settings.prototype.positive = 0;
+    settings.prototype.currentwoots = 0;
 
-    settings.prototype.negative = 0;
+    settings.prototype.currentmehs = 0;
 
-    settings.prototype.curates = 0;
+    settings.prototype.currentcurates = 0;
 
     settings.prototype.roomUrlPath = null;
 
@@ -81,9 +81,9 @@
     };
 
     settings.prototype.newSong = function() {
-      this.totalVotingData.woots += this.obj.positive;
-      this.totalVotingData.mehs += this.obj.negative;
-      this.totalVotingData.curates += this.obj.curates;
+      this.totalVotingData.woots += this.currentwoots;
+      this.totalVotingData.mehs += this.currentmehs;
+      this.totalVotingData.curates += this.currentcurates;
       this.setInternalWaitlist();
       this.currentsong = API.getMedia();
       if (this.currentsong !== null) {
@@ -1646,9 +1646,9 @@
   };
 
   updateVotes = function(obj) {
-    obj.positive;
-    obj.negative;
-    return obj.curates;
+    data.currentwoots = obj.positive;
+    data.currentmehs = obj.negative;
+    data.currentcurates = obj.curates;
   };
 
   announceCurate = function(obj) {
@@ -1668,7 +1668,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: " + data.currentsong.title + " - " + data.currentsong.author + " ~~ " + obj.positive + " woots ~ " + obj.negative + " mehs ~ " + obj.curates + " curates");
+      API.sendChat("/em: " + data.currentsong.title + " - " + data.currentsong.author + " ~~ " + data.currentwoots + " woots ~ " + data.currentmehs + " mehs ~ " + data.currentcurates + " curates");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
