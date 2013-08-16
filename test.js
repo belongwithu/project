@@ -29,11 +29,11 @@
 
     settings.prototype.hasWarned = false;
 
-    settings.prototype.currentwoots = 0;
+    settings.prototype.obj.positive = 0;
 
-    settings.prototype.currentmehs = 0;
+    settings.prototype.obj.negative = 0;
 
-    settings.prototype.currentcurates = 0;
+    settings.prototype.obj.curates = 0;
 
     settings.prototype.roomUrlPath = null;
 
@@ -81,9 +81,9 @@
     };
 
     settings.prototype.newSong = function() {
-      this.totalVotingData.woots += this.currentwoots;
-      this.totalVotingData.mehs += this.currentmehs;
-      this.totalVotingData.curates += this.currentcurates;
+      this.totalVotingData.woots += this.obj.positive;
+      this.totalVotingData.mehs += this.obj.negative;
+      this.totalVotingData.curates += this.obj.curates;
       this.setInternalWaitlist();
       this.currentsong = API.getMedia();
       if (this.currentsong !== null) {
