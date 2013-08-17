@@ -1656,11 +1656,11 @@
   };
 
   hook = function(apiEvent, callback) {
-    return API.addEventListener(apiEvent, callback);
+    return API.on(apiEvent, callback);
   };
 
   unhook = function(apiEvent, callback) {
-    return API.removeEventListener(apiEvent, callback);
+    return API.off(apiEvent, callback);
   };
 
   apiHooks = [
