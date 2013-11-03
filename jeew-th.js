@@ -1655,7 +1655,7 @@
   handleUserJoin = function(user) {
     data.userJoin(user);
     data.users[user.id].updateActivity();
-    return API.sendChat("@" + user.username + " welcome to this room!");
+//    return API.sendChat("@" + user.username + " welcome to this room!");
   };
 
   handleNewSong = function(obj) {
