@@ -1300,7 +1300,7 @@
     };
 
     kickCommand.prototype.functionality = function() {
-      return API.moderateKickUser(user.id);
+      return API.moderateKickUser(user.id,data[1]);
     };
 
     return kickCommand;
