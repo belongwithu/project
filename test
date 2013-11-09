@@ -1299,7 +1299,7 @@
       return this.rankPrivelege = 'mod';
     };
 
-    skipCommand.prototype.functionality = function() {
+    kickCommand.prototype.functionality = function() {
       return API.moderateKickUser(user.id);
     };
 
