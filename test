@@ -1293,14 +1293,23 @@
       return _ref98;
     }
 
- kickCommand.prototype.init = function() {
+     kickCommand.prototype.init = function() {
       this.command = '!kick';
-      this.parseType = 'exact';
+      this.parseType = 'startsWith';
       return this.rankPrivelege = 'mod';
     };
 
     kickCommand.prototype.functionality = function() {
-      return API.moderateKickUser(user.id,data[1]);
+      var msg, name, r, user;
+      msg = this.msgData.message;
+      if (msg.length > this.command.length + 2) {
+        name = msg.substr(this.command.length + 2);
+        r = new RoomHelper();
+        user = r.lookupUser(name);
+        if (user !== false) {
+          return API.moderateKickUser(user.id);
+        }
+      }
     };
 
     return kickCommand;
