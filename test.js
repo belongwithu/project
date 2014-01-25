@@ -354,11 +354,7 @@
     }
   };
 
-  initEnvironment = function() {
-    document.getElementById("button-vote-positive").click();
-    return document.getElementById("button-sound").click();
-  };
-  
+
   initialize = function() {
     pupOnline();
     populateUserData();
